@@ -19,7 +19,7 @@ const language = navigator.language.substring(0,2);
  
 
   // Fetch flowers data
-  fetch('/de/api/flowers')
+  fetch(`/${language}/api/flowers`)
   .then(response => {
       if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
