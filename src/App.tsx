@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import BouquetList from './components/BouquetList';
 
 //define flower type
 type Flower = {
@@ -31,10 +32,12 @@ const language = navigator.language.substring(0,2);
 
 
 return (
+  <>
+  
   <div className="App">
     <header className="App-header">
-      <div className="App-intro">
-        <h2>JUG List</h2>
+      <div className="App-intro" style={{marginRight:3}}>
+        <h2>Choose your bouquet</h2>
        
         {flowers.map((flower) => (
           <div key={flower.id}>{flower.name}</div>
@@ -42,6 +45,15 @@ return (
       </div>
     </header>
   </div>
+
+  <BouquetList/>
+  
+  
+  
+  
+  
+  </>
+  
 );
 }
 
