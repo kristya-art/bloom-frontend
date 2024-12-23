@@ -1,9 +1,3 @@
-export interface Flower {
-    id:number;
-    name:string;
-    color:string;
-    price:number;
-}
 
 const language = navigator.language.substring(0,2);
 export default class FlowerService {

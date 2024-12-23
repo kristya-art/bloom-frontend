@@ -15,24 +15,6 @@ import {
 } from '@mui/material';
 
 
-
-
-
-//define flower type
-type Flower = {
-    id:number;
-    name:string;
-    color:string;
-    price:number;
-  };
-  
-type Bouquet = {
-    id:number;
-    name:string;
-    price:number;
-    type:string;
-};
-
 const BouquetList: React.FC = () => {
     // State for flowers and bouquets
     const [flowers, setFlowers] = useState<Flower[]>([]);
@@ -69,9 +51,18 @@ const BouquetList: React.FC = () => {
       }
   
       const fetchBouquets = async () => {
+       const flower1: Flower = {id:1, name: 'Rose', color: 'Red', price:3.5};
+       const flower2: Flower = {id:2, name: 'Tulip', color: 'Yellow', price:2.5};
+       const flower3: Flower = {id:3, name: 'Lily', color: 'White', price:4.0};
+
+       const vase:Vase = {id:1,name:'lady', color:'white',material: 'Porcelain', size: 'Medium',price:25.0};
+
+       const flowerList1: Flower[] =[flower1, flower2];
+       const flowerList2: Flower[] = [flower3, flower1];
+
         const bouquetData: Bouquet[] = [
-          { id: 1, name: 'Valentine Special', price: 50, type: 'Valentine' },
-          { id: 2, name: 'Christmas Delight', price: 60, type: 'Christmas' },
+          { id: 1, name: 'Valentine Special', price: 50 , vase, flowerList:flowerList1},
+          { id: 2, name: 'Christmas Delight', price: 60, vase, flowerList:flowerList2 },
         ];
         setBouquets(bouquetData);
       };
@@ -127,7 +118,7 @@ const BouquetList: React.FC = () => {
                 <CardContent>
                   <Typography variant="h5">{bouquet.name}</Typography>
                   <Typography variant="body2">Price: ${bouquet.price}</Typography>
-                  <Typography variant="body2">Type: {bouquet.type}</Typography>
+                  <Typography variant="body2">Type: {bouquet.price}</Typography>
                 </CardContent>
               </Card>
             </Grid>
