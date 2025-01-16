@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import BouquetList from './components/BouquetList';
+import ArtikelList from './components/ArtikelList';
 
 //define flower type
 type Flower = {
@@ -33,7 +34,6 @@ const language = navigator.language.substring(0,2);
 
 return (
   <>
-  
   <div className="App">
     <header className="App-header">
       <div className="App-intro" style={{marginRight:3}}>
@@ -48,9 +48,7 @@ return (
 
   <BouquetList/>
   
-  
-  
-  
+  <ArtikelList/>
   
   </>
   
